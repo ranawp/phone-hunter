@@ -3,7 +3,13 @@
     width: 75%;
     margin: auto;
 }
+
+/* spinner */
 #spinner{
+    display: none;
+}
+/* error massage */ 
+#error-massage{
     display: none;
 }
 

@@ -22,10 +22,18 @@
         <span onclick="getMobileData()" class="input-group-text " id="basic-addon2">Click here</span>
     </div>
 
-    <!-- spinner -->
-    <div class="spinner-border" id="spinner" role="status">
-        <span class="sr-only"></span>
+    <!-- error massage -->
+    <div class="text-center" id="error-massage">
+        <p>Not found</p>
     </div>
+
+    <!-- spinner -->
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border" id="spinner" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+
 
     <!-- display single mobile phone details -->
     <div class="container mb-3" id="single-Mobile">
@@ -34,7 +42,7 @@
 
 
     <!-- display all mobile field -->
-    <div class="container">
+    <div class="container" id="all-mobile">
         <div class="row" id="display-mobile">
 
         </div>

@@ -1,7 +1,23 @@
+//spinner 
+const toggleSpinner = displaystyle => {
+    document.getElementById('spinner').style.display = displaystyle
+
+}
+//spinner loading time 
+const toggoleSearch = displayStyle => {
+    document.getElementById('all-mobile').style.display = displayStyle
+}
+//error massage 
+const errorMassage = displayStyle => {
+    document.getElementById('error-massage').style.display = displayStyle
+}
+
 //get input field data
 const getMobileData = () => {
     const inputField = document.getElementById('input-field').value
     inputField.value = ''
+    toggleSpinner('block')
+    toggoleSearch('none')
     loadData(inputField)
 }
 
@@ -18,26 +34,33 @@ const loadData = async (searchText) => {
 const displayData = mobileData => {
     const displayMobile = document.getElementById('display-mobile')
     displayMobile.textContent = ''
-    mobileData.forEach(data => {
-        const div = document.createElement('div')
-        div.classList.add('col-lg-4')
-        div.classList.add('col-12')
-        div.innerHTML = `
-        
-        <div class="card mb-3" style="width: 18rem;">
-  <img width="img-fluid"  src="${data.image}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${data.phone_name}</h5>
-    <p class="card-text">${data.brand}</p>
-    <a onclick='singlePhoneDetail("${data.slug}")' href="#" class="btn btn-primary">Details</a> 
-  </div>
-</div>`
-        displayMobile.appendChild(div)
+    if (mobileData) {
+        mobileData.forEach(data => {
+            const div = document.createElement('div')
+            div.classList.add('col-lg-4')
+            div.classList.add('col-12')
+            div.innerHTML = `
+            
+            <div class="card mb-3" style="width: 18rem;">
+      <img width="img-fluid"  src="${data.image}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">${data.phone_name}</h5>
+        <p class="card-text">${data.brand}</p>
+        <a onclick='singlePhoneDetail("${data.slug}")' href="#" class="btn btn-primary">Details</a> 
+      </div>
+    </div>`
+            displayMobile.appendChild(div)
 
-    });
+        });
+        errorMassage('none')
+    } else {
+        errorMassage('block')
+    }
+
+    toggleSpinner('none')
+    toggoleSearch('block')
 }
 
-// displayData('iPhone 13 mini')
 
 //fetch mobile details 
 const singlePhoneDetail = async (id) => {
