@@ -3,6 +3,9 @@
     width: 75%;
     margin: auto;
 }
+#spinner{
+    display: none;
+}
 
 /*single image width */
 /* img.card-img-top {
