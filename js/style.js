@@ -104,9 +104,9 @@ const displaySinglephone = data => {
     <p class="card-text"><span class="fw-bold">Storage:</span>${mobileData.mainFeatures.storage}</p>
     <p class="card-text"><span class="fw-bold">Display Size:</span>${mobileData.mainFeatures.displaySize ? mobileData.mainFeatures.displaySize : `Result not found`}</p>
 
-    <p class="card-text"><span class="fw-bold">Censor:</span>${mobileData.mainFeatures.sensors[0] ? mobileData.mainFeatures.sensors[0] : `Result not found`},
-    ${mobileData.mainFeatures.sensors[1] ? mobileData.mainFeatures.sensors[1] : `Result Not found`},
-    ${mobileData.mainFeatures.sensors[2] ? mobileData.mainFeatures.sensors[2] : `Result not found`}, ${mobileData.mainFeatures.sensors[3] ? mobileData.mainFeatures.sensors[3] : `Result not found`}${mobileData.mainFeatures.sensors[4] ? mobileData.mainFeatures.sensors[4] : `Result not found`}</p>
+    <p class="card-text"><span class="fw-bold">Censor:</span>${mobileData.mainFeatures.sensors[0] ? mobileData.mainFeatures.sensors[0] : `Result not found`}, <br>
+    ${mobileData.mainFeatures.sensors[1] ? mobileData.mainFeatures.sensors[1] : `Result Not found`},<br>
+    ${mobileData.mainFeatures.sensors[2] ? mobileData.mainFeatures.sensors[2] : `Result not found`},<br> ${mobileData.mainFeatures.sensors[3] ? mobileData.mainFeatures.sensors[3] : `Result not found`},<br>${mobileData.mainFeatures.sensors[4] ? mobileData.mainFeatures.sensors[4] : `Result not found`}.</p>
 
     <h4 class="fw-bold">Others information</h4> 
     <p class="card-text"><span class="fw-bold">WLAN:</span>${mobileData.others?.WLAN ? mobileData.others.WLAN : `Result not found`}</p>
