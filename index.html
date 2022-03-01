@@ -16,36 +16,38 @@
 </head>
 
 <body>
-    <h3 class="container text-center mt-4 text_color fw-bold">Mobile Paradise</h3>
-    <!-- input field -->
-    <div class="input-group mb-3 ">
-        <input id="input-field" type="text" class="form-control " placeholder="Input mobile name">
-        <span onclick="getMobileData()" class="input-group-text " id="button-color">Search</span>
-    </div>
-
-    <!-- error massage -->
-    <div class="text-center" id="error-massage">
-        <p class="text-danger">Data not found!Please search again.</p>
-    </div>
-
-    <!-- spinner -->
-    <div class="d-flex justify-content-center">
-        <div class="spinner-border" id="spinner" role="status">
-            <span class="sr-only"></span>
+    <main>
+        <h3 class="container text-center mt-4 text_color fw-bold">Mobile Paradise</h3>
+        <!-- input field -->
+        <div class="input-group mb-3 ">
+            <input id="input-field" type="text" class="form-control " placeholder="Input mobile name">
+            <span onclick="getMobileData()" class="input-group-text " id="button-color">Search</span>
         </div>
-    </div>
 
-    <!-- display single mobile phone details -->
-    <div class="container mb-3" id="single-Mobile">
-    </div>
+        <!-- error massage -->
+        <div class="text-center" id="error-massage">
+            <p class="text-danger">Data not found!Please search again.</p>
+        </div>
 
-    <!-- display all mobile field -->
-    <div class="container" id="all-mobile">
-        <div class="row" id="display-mobile">
-            <div class="col-lg-4">
+        <!-- spinner -->
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" id="spinner" role="status">
+                <span class="sr-only"></span>
             </div>
         </div>
-    </div>
+
+        <!-- display single mobile phone details -->
+        <div class="container mb-3" id="single-Mobile">
+        </div>
+
+        <!-- display all mobile field -->
+        <div class="container" id="all-mobile">
+            <div class="row" id="display-mobile">
+
+            </div>
+        </div>
+    </main>
+
 
     <!-- external javascipt link -->
     <script src="./js/style.js"></script>
