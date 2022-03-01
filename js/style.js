@@ -34,6 +34,9 @@ const loadData = async (searchText) => {
 
 //display all mobile data
 const displayData = allData => {
+    //single mobile data clear when search
+    const singleMobile = document.getElementById('single-Mobile')
+    singleMobile.innerHTML = ''
     const mobileData = allData.data
     const displayMobile = document.getElementById('display-mobile')
     const sliceData = mobileData.slice(0, 20)
@@ -75,8 +78,6 @@ const singlePhoneDetail = async (id) => {
     const res = await fetch(url)
     const data = await res.json()
     displaySinglephone(data)
-    console.log(data)
-    console.log(data.mainFeatures)
 }
 
 //display single mobile details 
@@ -114,12 +115,11 @@ const displaySinglephone = data => {
     
     <p class="card-text"><span class="fw-bold">Radio:</span>${mobileData.others?.Radio ? mobileData.others.Radio : `Result not found`}</p>
     <p class="card-text"><span class="fw-bold">USB:</span>${mobileData.USB?.Bluetooth ? mobileData.USB.Bluetooth : `Result not found`}</p>
-    
 
-    
   </div>
 </div>
         `
     singleMobile.appendChild(div)
+
 }
 
