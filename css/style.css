@@ -3,6 +3,14 @@
     width: 75%;
     margin: auto;
 }
+#input-field {
+    border-color: #FF724B;
+}
+#button-color, a.btn.btn-primary {
+    background-color: #FF724B;
+    color: white;
+    border: none;
+}
 
 /* spinner */
 #spinner{
@@ -11,6 +19,11 @@
 /* error massage */ 
 #error-massage{
     display: none;
+}
+
+.text_color{
+color: #FF4815;
+
 }
 
 /*single image width */
