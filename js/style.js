@@ -88,7 +88,7 @@ const displaySinglephone = data => {
     const div = document.createElement('div')
     div.innerHTML = ` 
         <div class="card shadow p-3">
-  <img src="${mobileData.image}" class="card-img-top" alt="...">
+  <img class='img-fluid' src="${mobileData.image}" class="card-img-top" alt="...">
   <div class="card-body">
     <p class="card-title"><span class="
     fw-bold">Phone Name:</span>${mobileData.name}</p>
