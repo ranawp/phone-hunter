@@ -56,8 +56,6 @@ const displayData = allData => {
         div.classList.add('col-md-4')
         div.classList.add('col-12')
 
-
-
         div.innerHTML = `
             <div class=" card mb-3 shadow p-3 gx-2 rounded button-color">
           <img width="img-fluid"  src="${data.image}" class="card-img-top" alt="...">
@@ -92,11 +90,8 @@ const displaySinglephone = data => {
         <div class="card shadow p-3">
   <img src="${mobileData.image}" class="card-img-top" alt="...">
   <div class="card-body">
-
-   
     <p class="card-title"><span class="
     fw-bold">Phone Name:</span>${mobileData.name}</p>
-
     <p class="card-title"><span class="
     fw-bold">Brand:</span>${mobileData.brand}</p>
     <p class="card-text"><span class="fw-bold">Relase Date: </span>${mobileData.releaseDate ? mobileData.releaseDate : `Result not found`}</p>
