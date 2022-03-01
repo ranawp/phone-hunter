@@ -75,6 +75,8 @@ const singlePhoneDetail = async (id) => {
     const res = await fetch(url)
     const data = await res.json()
     displaySinglephone(data)
+    console.log(data)
+    console.log(data.mainFeatures)
 }
 
 //display single mobile details 
@@ -103,6 +105,18 @@ const displaySinglephone = data => {
     <p class="card-text"><span class="fw-bold">Censor:</span>${mobileData.mainFeatures.sensors[0] ? mobileData.mainFeatures.sensors[0] : `Result not found`},
     ${mobileData.mainFeatures.sensors[1] ? mobileData.mainFeatures.sensors[1] : `Result Not found`},
     ${mobileData.mainFeatures.sensors[2] ? mobileData.mainFeatures.sensors[2] : `Result not found`}, ${mobileData.mainFeatures.sensors[3] ? mobileData.mainFeatures.sensors[3] : `Result not found`}${mobileData.mainFeatures.sensors[4] ? mobileData.mainFeatures.sensors[4] : `Result not found`}</p>
+
+    <h4 class="fw-bold">Others information</h4> 
+    <p class="card-text"><span class="fw-bold">WLAN:</span>${mobileData.others?.WLAN ? mobileData.others.WLAN : `Result not found`}</p>
+    <p class="card-text"><span class="fw-bold">Bluetooth:</span>${mobileData.others?.Bluetooth ? mobileData.others.Bluetooth : `Result not found`}</p>
+    <p class="card-text"><span class="fw-bold">GPS:</span>${mobileData.others?.GPS ? mobileData.others.GPS : `Result not found`}</p>
+    <p class="card-text"><span class="fw-bold">NFC:</span>${mobileData.others?.NFC ? mobileData.others.NFC : `Result not found`}</p>
+    
+    <p class="card-text"><span class="fw-bold">Radio:</span>${mobileData.others?.Radio ? mobileData.others.Radio : `Result not found`}</p>
+    <p class="card-text"><span class="fw-bold">USB:</span>${mobileData.USB?.Bluetooth ? mobileData.USB.Bluetooth : `Result not found`}</p>
+    
+
+    
   </div>
 </div>
         `
