@@ -53,11 +53,13 @@ const displayData = allData => {
     sliceData.forEach(data => {
         const div = document.createElement('div')
         div.classList.add('col-lg-4')
+        div.classList.add('col-md-4')
         div.classList.add('col-12')
-        div.classList.add('col-md-6')
+
+
 
         div.innerHTML = `
-            <div class="card mb-3 shadow p-3 gx-2 rounded button-color" style="width: 18rem;">
+            <div class=" card mb-3 shadow p-3 gx-2 rounded button-color">
           <img width="img-fluid"  src="${data.image}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">${data.phone_name}</h5>
@@ -87,7 +89,7 @@ const displaySinglephone = data => {
     singleMobile.innerHTML = ''
     const div = document.createElement('div')
     div.innerHTML = ` 
-        <div class="card shadow p-3" style="width: 18rem;">
+        <div class="card shadow p-3">
   <img src="${mobileData.image}" class="card-img-top" alt="...">
   <div class="card-body">
 
