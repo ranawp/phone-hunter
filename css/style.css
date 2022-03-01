@@ -1,3 +1,6 @@
+body{
+    background-color: rgb(75, 75, 160);
+}
 /* input width */
 .input-group.mb-3 {
     width: 75%;
@@ -26,8 +29,4 @@ color: #FF4815;
 
 }
 
-/*single image width */
-/* img.card-img-top {
-    width: 68%;
-} */
 

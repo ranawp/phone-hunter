@@ -16,6 +16,8 @@ const errorMassage = displayStyle => {
 const getMobileData = () => {
     const inputField = document.getElementById('input-field').value
     document.getElementById('input-field').value = ''
+
+    //spinner 
     toggleSpinner('block')
     toggoleSearch('none')
     loadData(inputField)
@@ -36,12 +38,15 @@ const displayData = allData => {
     const displayMobile = document.getElementById('display-mobile')
     const sliceData = mobileData.slice(0, 20)
     displayMobile.textContent = ''
+
+    //error massage 
     if (allData.status == false) {
         errorMassage('block')
     } else {
         errorMassage('none')
     }
 
+    //show 20 images
     sliceData.forEach(data => {
         const div = document.createElement('div')
         div.classList.add('col-lg-4')
@@ -49,61 +54,55 @@ const displayData = allData => {
         div.classList.add('col-md-6')
 
         div.innerHTML = `
-                <div class="card mb-3 shadow p-3 gx-2 rounded button-color" style="width: 18rem;">
+            <div class="card mb-3 shadow p-3 gx-2 rounded button-color" style="width: 18rem;">
           <img width="img-fluid"  src="${data.image}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">${data.phone_name}</h5>
             <p class="card-text">${data.brand}</p>
             <a onclick='singlePhoneDetail("${data.slug}")' href="#" class="btn btn-primary">Details</a> 
           </div>
-        </div>
-        
-        `
+        </div>  `
         displayMobile.appendChild(div)
     });
-
-
     //spinner display
     toggleSpinner('none')
     toggoleSearch('block')
-
 }
-
-
-//fetch mobile details 
+//fetch single mobile details 
 const singlePhoneDetail = async (id) => {
     const url = `https://openapi.programming-hero.com/api/phone/${id}`
     fetch(url)
     const res = await fetch(url)
     const data = await res.json()
-    displaySinglephone(data.data)
+    displaySinglephone(data)
 }
 
+//display single mobile details 
 const displaySinglephone = data => {
+    const mobileData = data.data
     const singleMobile = document.getElementById('single-Mobile')
     singleMobile.innerHTML = ''
     const div = document.createElement('div')
     div.innerHTML = ` 
-        <div class="card" style="width: 18rem;">
-  <img src="${data.image}" class="card-img-top" alt="...">
+        <div class="card shadow p-3" style="width: 18rem;">
+  <img src="${mobileData.image}" class="card-img-top" alt="...">
   <div class="card-body">
 
    
     <p class="card-title"><span class="
-    fw-bold">Brand:</span>${data.name}</p>
+    fw-bold">Phone Name:</span>${mobileData.name}</p>
 
     <p class="card-title"><span class="
-    fw-bold">Brand:</span>${data.brand}</p>
-    <p class="card-text"><span class="fw-bold">Relase Date: </span>${data?.releaseDate}</p>
-    <p class=" card-text"><span class="fw-bold">Cheap set:</span>${data.mainFeatures.chipSet}</p>
-    <p class="card-text fw-bold"><span class="fw-bold">Memory:</span>${data.mainFeatures.memory}</p>
-    <p class="card-text"><span class="fw-bold">Storage:</span>${data.mainFeatures.storage}</p>
-    <p class="card-text"><span class="fw-bold">Display Size:</span>${data.mainFeatures.displaySize}</p>
+    fw-bold">Brand:</span>${mobileData.brand}</p>
+    <p class="card-text"><span class="fw-bold">Relase Date: </span>${mobileData.releaseDate ? mobileData.releaseDate : `Result not found`}</p>
+    <p class=" card-text"><span class="fw-bold">Cheap set:</span>${mobileData.mainFeatures.chipSet ? mobileData.mainFeatures.chipSet : `Result not found`}</p>
+    <p class="card-text fw-bold"><span class="fw-bold">Memory:</span>${mobileData.mainFeatures.memory ? mobileData.mainFeatures.memory : `Result not found`}</p>
+    <p class="card-text"><span class="fw-bold">Storage:</span>${mobileData.mainFeatures.storage}</p>
+    <p class="card-text"><span class="fw-bold">Display Size:</span>${mobileData.mainFeatures.displaySize ? mobileData.mainFeatures.displaySize : `Result not found`}</p>
 
-   
-    <p class="card-text"><span class="fw-bold">Censor:</span>${data.mainFeatures.sensors[0]},
-    ${data.mainFeatures.sensors[1]},
-    ${data.mainFeatures.sensors[2]}, ${data.mainFeatures.sensors[3]}${data.mainFeatures.sensors[4]}</p>
+    <p class="card-text"><span class="fw-bold">Censor:</span>${mobileData.mainFeatures.sensors[0] ? mobileData.mainFeatures.sensors[0] : `Result not found`},
+    ${mobileData.mainFeatures.sensors[1] ? mobileData.mainFeatures.sensors[1] : `Result Not found`},
+    ${mobileData.mainFeatures.sensors[2] ? mobileData.mainFeatures.sensors[2] : `Result not found`}, ${mobileData.mainFeatures.sensors[3] ? mobileData.mainFeatures.sensors[3] : `Result not found`}${mobileData.mainFeatures.sensors[4] ? mobileData.mainFeatures.sensors[4] : `Result not found`}</p>
   </div>
 </div>
         `
