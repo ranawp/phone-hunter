@@ -58,7 +58,7 @@ const displayData = allData => {
 
         div.innerHTML = `
             <div class=" card mb-3 shadow p-3 gx-2 rounded button-color">
-          <img width="img-fluid"  src="${data.image}" class="card-img-top" alt="...">
+          <img class="img-fluid"  src="${data.image}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">${data.phone_name}</h5>
             <p class="card-text">${data.brand}</p>
