@@ -73,11 +73,13 @@ const displayData = allData => {
 }
 //fetch single mobile details 
 const singlePhoneDetail = async (id) => {
+    toggleSpinner('block')
     const url = `https://openapi.programming-hero.com/api/phone/${id}`
     fetch(url)
     const res = await fetch(url)
     const data = await res.json()
     displaySinglephone(data)
+
 }
 
 //display single mobile details 
@@ -121,6 +123,7 @@ const displaySinglephone = data => {
 </div>
         `
     singleMobile.appendChild(div)
+    toggleSpinner('none')
 
 }
 
