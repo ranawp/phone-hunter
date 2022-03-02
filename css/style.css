@@ -1,7 +1,15 @@
 body{
     background-color: rgb(75, 75, 160);
 }
-/* input width */
+/* title color */
+.text_color{
+    color: #FF4815;   
+}
+.paradise-text{
+    color:rgb(70, 70, 107)
+}
+
+/* input area */
 .input-group.mb-3 {
     width: 75%;
     margin: auto;
@@ -9,6 +17,11 @@ body{
 #input-field {
     border-color: #FF724B;
 }
+
+input#input-field {
+    box-shadow: none;
+} 
+/* input button */
 #button-color, a.btn.btn-primary {
     background-color: #FF724B;
     color: white;
@@ -24,9 +37,8 @@ body{
     display: none;
 }
 
-.text_color{
-color: #FF4815;
 
-}
+
+
 
 
