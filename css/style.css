@@ -37,6 +37,16 @@ input#input-field {
     display: none;
 }
 
+/* all mobile display area */
+img.img-fluid {
+    max-width: 68%;
+}
+
+/* single mobile display area */ 
+img.card-img-top {
+    max-width: 68%;
+}
+
 
 
 
